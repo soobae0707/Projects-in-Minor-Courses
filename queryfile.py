@@ -1,3 +1,4 @@
+all_queries= [tot_triples, tot_classes, class_vs_num]
 query_total= [tot_triples, tot_classes, tot_p, tot_s, tot_o, tot_property]
 query_table= [class_vs_num, prop_vs_num_tri, prop_vs_num_sub, prop_vs_num_obj]
 query_full= [full_classes, full_properties]
