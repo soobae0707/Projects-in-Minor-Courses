@@ -1,8 +1,3 @@
-all_queries= [tot_triples, tot_classes, class_vs_num]
-query_total= [tot_triples, tot_classes, tot_p, tot_s, tot_o, tot_property]
-query_table= [class_vs_num, prop_vs_num_tri, prop_vs_num_sub, prop_vs_num_obj]
-query_full= [full_classes, full_properties]
-
 ####google code archive: g / tutorial: t/ modified from me: m/ created= c
 
 ##total_count
@@ -79,3 +74,8 @@ perc_sub= """SELECT ((COUNT(?ind_class) AS ?class_indiv)/(COUNT(?ind) AS ?total_
 #3. Count/proportions of URI/Literal of s/p/o i.e. frequency of datatype
 #4. AVG, MIN, MAX of the results: e.g. count for each s/p/o categories
 #5. Broad overview: a big table with num of s/p/o
+
+all_queries= [tot_triples, tot_classes, class_vs_num]
+query_total= [tot_triples, tot_classes, tot_p, tot_s, tot_o]
+query_table= [class_vs_num, prop_vs_num_tri, prop_vs_num_sub, prop_vs_num_obj]
+query_full= [full_classes, full_properties]
