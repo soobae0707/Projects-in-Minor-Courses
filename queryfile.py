@@ -19,13 +19,6 @@ tot_s= """SELECT (COUNT(DISTINCT ?s ) AS ?no) { ?s ?p ?o }"""
 #5. total number of distinct object nodes: g
 tot_o= """SELECT (COUNT(DISTINCT ?o ) AS ?no) { ?s ?p ?o filter(!isLiteral(?o)) }"""
 
-#6. total number of occurrences of properties: t Q. difference between property and predicate?
-
-tot_property= """
-SELECT ?class ?property (COUNT(?property) AS ?prop_count)
-WHERE { ?individual a ?class ; ?property ?something .}
-GROUP BY ?class ?property ?prop_count 
-ORDER BY ?class DESC(?prop_count)"""
 
 ## table
 
@@ -75,7 +68,13 @@ perc_sub= """SELECT ((COUNT(?ind_class) AS ?class_indiv)/(COUNT(?ind) AS ?total_
 #4. AVG, MIN, MAX of the results: e.g. count for each s/p/o categories
 #5. Broad overview: a big table with num of s/p/o
 
-all_queries= [tot_triples, tot_classes, class_vs_num]
+
+##list
+
 query_total= [tot_triples, tot_classes, tot_p, tot_s, tot_o]
+query_total_name= ['total number of triples','total number of distinct classes','total number of distinct predicates','total number of distinct subjects','total number of distinct objects']
+
 query_table= [class_vs_num, prop_vs_num_tri, prop_vs_num_sub, prop_vs_num_obj]
+query_table_name= ['class vs. total number of instances of the class', 'property vs. total number of triples using the property', 'property vs. total number of distinct subjects in triples using the property','property vs. total number of distinct objects in triples using the property']
+
 query_full= [full_classes, full_properties]
